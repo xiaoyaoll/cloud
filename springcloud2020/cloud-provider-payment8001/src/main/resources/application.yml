@@ -1,0 +1,24 @@
+server:
+  port: 8001
+spring:
+  application:
+    name: payment
+#\u6570\u636E\u5E93\u8FDE\u63A5
+  datasource:
+    url: jdbc:mysql://localhost:3306/test?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding-utr-8
+    username: root
+    password: 123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+#mybatis\u914D\u7F6E
+mybatis:
+  #config-location: classpath:mapper/ *.xml
+  type-aliases-package: com.xiaoyao.entity #\u522B\u540D\u7C7B\u6240\u5728\u5305
+  mapper-locations: classpath:mapper/*.xml
+#eureka\u5BA2\u6237\u7AEF\u914D\u7F6E
+eureka:
+  client:
+    fetch-registry: true #\u68C0\u67E5\u83B7\u53D6\u670D\u52A1
+    register-with-eureka: true #\u6CE8\u518C\u670D\u52A1
+    service-url:
+      defaultZone: http://eureka7001:7001/eureka,http://eureka7002:7002/eureka #eureka\u670D\u52A1\u7AEF\u5730\u5740
