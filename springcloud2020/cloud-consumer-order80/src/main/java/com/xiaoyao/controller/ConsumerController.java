@@ -24,7 +24,9 @@ public class ConsumerController {
     @Autowired
     RestTemplate restTemplate;
 
-    private static final String URL="127.0.0.1:8001";
+    //private static final String URL="http://127.0.0.1:8001";
+    //通过在eureka注册的服务名称获取服务的地址,负载均衡
+    private static final String URL="http://PAYMENT";
     @PostMapping("/payment/create")
     public CommonResult create(Payment payment) {
         return restTemplate.postForObject(URL+"/payment/create",payment,CommonResult.class);
@@ -34,7 +36,7 @@ public class ConsumerController {
 
     @GetMapping("/payment/get/{id}")
     public CommonResult<Payment> get(@PathVariable("id") long id) {
-        return restTemplate.postForObject(URL+"/payment/get",id,CommonResult.class);
+        return restTemplate.getForObject(URL+"/payment/get/"+id,CommonResult.class);
     }
 
     ;
