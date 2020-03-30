@@ -22,3 +22,6 @@ eureka:
     register-with-eureka: true #\u6CE8\u518C\u670D\u52A1
     service-url:
       defaultZone: http://eureka7001:7001/eureka,http://eureka7002:7002/eureka #eureka\u670D\u52A1\u7AEF\u5730\u5740
+  instance:
+    instance-id: payment8002
+    prefer-ip-address: true
