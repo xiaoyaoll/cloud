@@ -8,7 +8,9 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: http://eureka7001:7001/eureka
-
+      defaultZone: http://eureka7002:7002/eureka
+ribbon:
+ ConnectTimeout: 5000
+ ReadTimeout: 5000
 
 

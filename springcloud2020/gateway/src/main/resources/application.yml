@@ -1,0 +1,24 @@
+
+server:
+  port: 9527
+spring:
+  application:
+    name: GATEWAY
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes: #路由
+       - id: payment_routh #payment_routh #路由的ID，没有固定规则，但要求唯一，建议配合服务名
+         #uri: http://localhost:8001  #匹配后提供服务的路由地址 没有进行负载均衡
+         uri: http://news.baidu.com/ #匹配后提供服务的路由地址
+         predicates: #断言
+          - Path=/guonei
+
+eureka:
+  client:
+    service-url:
+     defaultZone: http://127.0.0.1:7002/eureka
+    fetch-registry: true
+    register-with-eureka: true
