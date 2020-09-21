@@ -17,6 +17,7 @@
       <module>cloud-provider-payment8003</module>
     <module>cloud-consumer-openfeign-order80</module>
     <module>com-xiaoyao-hystrixOrder80</module>
+    <module>config</module>
   </modules>
   <packaging>pom</packaging>
 

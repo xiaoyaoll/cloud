@@ -2,6 +2,7 @@ package com.xiaoyao.consumer.demo;
 
 import com.xiaoyao.Function;
 import com.xiaoyao.entity.CommonResult;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,6 +25,9 @@ public class ConsumerController {
     @Resource
     RestTemplate restTemplate;
 
+    @Value("${name}")
+    String name;
+
     @Function(name="获取",value="0101")
     @GetMapping("/payment/get/{id}")
     public boolean get(@PathVariable("id") int id){
@@ -34,6 +38,8 @@ public class ConsumerController {
     public CommonResult gt(@PathVariable("id") int id){
         return restTemplate.getForObject(url + "/payment/get/1", CommonResult.class);
     }
-
-
+    @GetMapping("/get")
+    public String get(){
+        return name;
+    }
 }
