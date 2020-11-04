@@ -11,6 +11,7 @@ import org.springframework.cloud.netflix.ribbon.RibbonClient;
 @EnableEurekaClient
 @RibbonClient(configuration= MyRule.class,name = "PRIVATE")
 public class ConsumerApplication {
+	//11
 
 	public static void main(String[] args) {
 		SpringApplication.run(ConsumerApplication.class, args);
