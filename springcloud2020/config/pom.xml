@@ -13,8 +13,6 @@
 	<name>config</name>
 	<description>Demo project for Spring Boot</description>
 <!--刘磊河南安阳县人-->
-<!--刘磊浙江杭州上班-->
-<!--微医集团-->
 	<properties>
 		<java.version>1.8</java.version>
 		<spring-cloud.version>Hoxton.SR8</spring-cloud.version>
